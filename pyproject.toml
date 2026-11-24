@@ -1,0 +1,24 @@
+[project]
+name = "algoritmo-recomendacao"
+version = "1.0.0"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["."]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+addopts = "-v"
+
+[tool.coverage.report]
+exclude_also = [
+    "class TerminalApplication:",
+    "def read_integer",
+    "if __name__ == \"__main__\":",
+]
