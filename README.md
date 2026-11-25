@@ -16,7 +16,7 @@
 
 ## Integrantes do Grupo
 
-- [Cauã Oliveira dos Santos](#índice)
+- [Cauã Oliveira dos Santos](https://github.com/cauadsts-glitch)
 - [João Lucas Pires de Oliveira](https://github.com/jao462)
 - [Nicolas Nascimento Santos de Oliveira](https://github.com/Nicolas-Oliveira543)
 - [Rafael Mateus Almeida de Souza](https://github.com/LayatoLyn)
@@ -62,6 +62,7 @@ Se desejar trabalhar com o VSCode ou outra IDE, rode o comando abaixo:
 code .
 ```
 >Após entrar no VSCode, pressione `Ctrl/Cmd + Shift + P` e escolha o interpretador Python.
+Depois, reative o ambiente virtual se estiver desativado.
 
 ## Testes Unitários
 
@@ -71,25 +72,21 @@ Se desejar rodar os testes, siga os passos abaixo.
 
 Primeiro, instale as dependências listadas no `pyproject.toml`:
 ```bash
-pip install -e ".[dev]"
+python -m pip install --upgrade pytest pytest-cov
 ```
 
 Depois, verifique se a instalação foi bem-sucedida:
 ```bash
-# Versão do Pytest
-pytest --version
-
-# Versão do Pytest para testes de cobertura
-pip show pytest-cov
+python -m pip show pytest pytest-cov
 ```
 
 Rode os testes unitários:
 ```bash
 python -m pytest 
 ```
-Depois rode os testes de cobertura de código:
+Depois rode os testes de cobertura de código com geração de relatório:
 ```bash
-python -m pytest --cov=algoritmo_recomendacao --cov-report=term-missing
+pytest --cov=. --cov-report=term-missing    
 ```
 
 
